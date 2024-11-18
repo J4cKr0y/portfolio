@@ -1,0 +1,124 @@
+name: CI/CD Portfolio
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Install testing dependencies
+      run: |
+        npm install --save-dev jest jest-environment-jsdom @testing-library/jest-dom @testing-library/dom
+        npm install --save-dev eslint eslint-plugin-jest
+        
+    - name: HTML validation
+      run: |
+        npm install -g html-validator-cli
+        html-validator --file index.html --verbose
+        
+    - name: CSS validation
+      run: |
+        npm install -g stylelint stylelint-config-standard
+        npx stylelint "**/*.css"
+        
+    - name: JavaScript linting
+      run: |
+        npx eslint "**/*.js"
+        
+    - name: Run tests
+      run: |
+        # Test du comportement du thème
+        echo "Testing theme toggle functionality"
+        npx jest --testMatch "**/theme.test.js"
+        
+        # Test de la navigation
+        echo "Testing navigation behavior"
+        npx jest --testMatch "**/navigation.test.js"
+        
+        # Test du carrousel
+        echo "Testing carousel functionality"
+        npx jest --testMatch "**/carousel.test.js"
+        
+        # Test du formulaire de contact
+        echo "Testing contact form"
+        npx jest --testMatch "**/contact.test.js"
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Optimize images
+      run: |
+        npm install -g sharp-cli
+        find . -type f -name "*.webp" -exec sharp --output "{}" {} \;
+        
+    - name: Minify CSS
+      run: |
+        npm install -g clean-css-cli
+        cleancss -o styles.min.css styles.css
+        
+    - name: Minify JavaScript
+      run: |
+        npm install -g terser
+        terser script.js -o script.min.js
+        
+    - name: Build artifact
+      run: |
+        mkdir dist
+        cp index.html dist/
+        cp styles.min.css dist/styles.css
+        cp script.min.js dist/script.js
+        cp -r img dist/
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: site-build
+        path: dist
+        compression-level: 9
+        retention-days: 1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: site-build
+        path: dist
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist

@@ -1,36 +1,22 @@
 //script.js
-// Add event listener for DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Get the theme toggle element
     const themeToggle = document.getElementById('theme-toggle');
-    
-    // Retrieve saved theme from local storage or set default if not available
     let savedTheme = localStorage.getItem('theme');
     if (!savedTheme) {
-        // Check if system prefers dark mode and set theme accordingly
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             savedTheme = 'dark';
         } else {
             savedTheme = 'light';
         }
     }
-    
-    // Apply the saved theme to the HTML element
     document.documentElement.dataset.theme = savedTheme;
-    
-    // Set the initial state of the toggle button based on the saved theme
     themeToggle.checked = savedTheme === 'dark';
-
-    // Add event listener for theme toggle changes
     themeToggle.addEventListener('change', () => {
         const newTheme = themeToggle.checked ? 'dark' : 'light';
         document.documentElement.dataset.theme = newTheme;
-        
-        // Save the updated theme to local storage
         localStorage.setItem('theme', newTheme);
     });
 });
-
 
 document.addEventListener('DOMContentLoaded', () => { 
 const logos = document.querySelectorAll('.tech-logo'); 
@@ -141,7 +127,6 @@ function openModal(projectId) {
         </div><br>
         <a href="${project.projectUrl}" target="_blank">Voir sur GitHub</a>
     `;
-    
     modal.style.display = 'block';
 }
 
@@ -241,3 +226,23 @@ window.addEventListener('scroll', () => {
         shape.style.transform = `translateY(${yPos}px)`;
     });
 });
+
+// Validation des champs avant soumission
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        if (!/^[A-Za-z\s]+$/.test(name)) {
+            alert('Le nom ne doit contenir que des lettres et des espaces.');
+            event.preventDefault();
+        }
+        if (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email)) {
+            alert('Veuillez entrer une adresse email valide.');
+            event.preventDefault();
+        }
+        if (message.length > 500) {
+            alert('Le message ne doit pas dépasser 500 caractères.');
+            event.preventDefault();
+        }
+    });
+

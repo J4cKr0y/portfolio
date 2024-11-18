@@ -134,15 +134,15 @@
                 <h2>Contact</h2>
                 <form action="https://formspree.io/f/xqazkrjp" method="post" id="contact-form" class="contact-form">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" autocomplete="name" required>
+                        <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" autocomplete="name" required>
 						<label for="name">Nom</label>						
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" autocomplete="email" required>
+                        <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" autocomplete="email" required>
 						<label for="email">Email</label>						
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" cols="21" rows="10" required></textarea>
+                        <textarea id="message" name="message" cols="21" rows="10" maxlength="500" required></textarea>
 						<label for="message">Message</label>
                     </div>
                     <button type="submit" value="Envoyer" aria-label="Envoyer">Envoyer</button>
