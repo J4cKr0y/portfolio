@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV de Jacky Royer - développeur informatique</title>
+    <link rel="stylesheet" href="pdf-styles.css">
+	<script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.min.mjs"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.worker.min.mjs"></script>
+    <script type="module" src="pdf-viewer.js"></script>
+</head>
+<body>
+    <h1>Mon CV</h1>
+    <div id="pdf-container">
+        <canvas id="pdf-canvas"></canvas>
+    </div>
+    <div id="controls">
+        <button id="prev-page">Précédent</button>
+        <button id="next-page">Suivant</button>
+        <button id="zoom-in">Zoom +</button>
+        <button id="zoom-out">Zoom -</button>
+        <a href="ROYERCV.pdf"><button id="save">Enregistrer</button></a>
+        <button id="print">Imprimer</button>
+    </div>
+</body>
+<a href="index.html">Retour vers le futur... Heu... Le Portfolio.</a>
+</html>

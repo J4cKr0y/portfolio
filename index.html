@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <title>Jacky - Développeur Full-stack : Node - Express / React</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<meta name="description"
+      content="Jacky Royer, développeur informatique à Montolieu. Découvrez son portfolio présentant ses compétences et projets, téléchargez son CV ou contactez-le.">
+	<meta name="keywords"
+      content="Jacky Royer, Développeur informatique, Portfolio, full-stack, Node, Express, React">
+	<meta name="author" content="Jacky Royer">
+	<meta property="og:title" content="Jacky Royer - développeur informatique">
+	<meta property="og:description"
+      content="Jacky Royer, développeur informatique à Montolieu. Découvrez son portfolio présentant ses compétences et projets, téléchargez son CV ou contactez-le.">
+	<meta property="og:image" content="https://j4ckr0y.github.io/Portfolio/img/Jacky.webp">
+	<meta property="og:url" content="https://j4ckr0y.github.io/Portfolio">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Jacky Royer - développeur informatique">
+	<meta name="twitter:description"
+      content="Jacky Royer, développeur informatique à Montolieu. Découvrez son portfolio présentant ses compétences et projets, téléchargez son CV ou contactez-le.">
+	<meta name="twitter:image" content="https://j4ckr0y.github.io/Portfolio/img/Jacky.webp">
+	<link rel="icon" href="favicon.png">
+	<script src="schema.js"></script>
+</head>
+
+<body>
+    <header class="glass-header">	
+<div class="theme-toggle">
+    <input type="checkbox" class="theme-input" id="theme-toggle" title="Toggle theme">
+    <label for="theme-toggle" class="theme-label">
+        <span class="visually-hidden">Selecteur theme sombre/clair</span>
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </label>
+</div>
+
+
+
+        <div class="header-content">
+            <h1>Jacky</h1>
+            <p class="title">Développeur Full-stack : Node - Express / React</p>
+				<div class="tech-logos"> 
+				<img src="img/techno/html.svg" alt="HTML" class="tech-logo tech-logo--NO"> 
+				<img src="img/techno/mongodb.svg" alt="MongoDB" class="tech-logo tech-logo--N"> 
+				<img src="img/techno/node.svg" alt="Node.js" class="tech-logo tech-logo--NE"> 
+				<img src="img/techno/react.svg" alt="React" class="tech-logo tech-logo--SO"> 
+				<img src="img/techno/sass.svg" alt="Sass" class="tech-logo tech-logo--S"> 
+				<img src="img/techno/sqlite.svg" alt="SQLite" class="tech-logo tech-logo--SE"> 
+			</div>         
+            <div class="social-links">
+                <a href="https://github.com/J4cKr0y" class="social-link" aria-label="Lien Github" title="Lien Github">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jacky-royer" class="social-link" aria-label="Lien linkedin" title="Lien linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <h2 class="visually-hidden">Navigation principale</h2>
+                <a href="#about" class="nav-link">À propos</a>
+                <a href="#projects" class="nav-link">Mes projets</a>
+                <a href="#avis" class="nav-link">Avis</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+        </div>
+        <a href="#top" class="return-top hidden" aria-label="Retour en haut de la page" title="Retour en haut de la page">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </header>
+    <main>
+        <section id="about" class="section">
+            <div class="parallax-container">
+                <svg class="parallax-svg" viewBox="0 0 100 100">
+                    <circle class="shape" cx="20" cy="20" r="10"/>
+                    <rect class="shape" x="60" y="40" width="20" height="20"/>
+                    <polygon class="shape" points="40,60 60,80 20,80"/>
+                </svg>
+				<div class="portrait"><img src="img/Jacky.webp" alt="Auto-portrait de Jacky Royer"></div>
+                <div class="content">
+                    <h2>À propos</h2>
+                <p>Je suis passionné depuis mes premières lignes en Qbasic par la création sur ordinateur. :-)</br>
+					Fort d'une expérience significative en tant que facteur d'équipe, je possède des compétences solides en gestion du temps, organisation et communication. </br>
+				    Ma formation de Développeur Web m'a permis de développer une grande adaptabilité et de solides compétences en React, Node/Express, SQLite et MongoDB. </br>
+                    Motivé à approfondir mes connaissances, mais aussi à découvrir d'autres langages, pour devenir un développeur full-stack polyvalent, </br>
+                    je suis ouvert à intégrer directement une équipe pour apprendre directement en situation, ou une formation en alternance (POEI ?) </br>
+                    pour m'améliorer toujours plus et ainsi contribuer efficacement à vos projets.
+				</p>
+				</br>
+				<a href="pdf-cv.html" class="social-link">Cliquez ici pour voir mon CV!</a>
+                </div>
+            </div>
+        </section>
+
+		
+        <section id="projects" class="section">
+            <h2>Mes projets</h2> </br>
+            <div class="list">
+                <div class="item">
+                    <button class="image-button" aria-label="Ouvrir le projet Grimoire" onclick="openModal(6)">
+                        <img src="img/grimoire.webp" alt="Projet Grimoire" />
+                    </button>
+                </div> </br>
+                <div class="item">
+                    <button class="image-button" aria-label="Ouvrir le projet Kasa" onclick="openModal(5)">
+                        <img src="img/kasa.webp" alt="Projet Kasa" />
+                    </button>
+                </div> </br>
+                <div class="item">
+                    <button class="image-button" aria-label="Ouvrir le projet Pong" onclick="openModal(7)">
+                        <img src="img/pong.webp" alt="Projet Pong" />
+                    </button>
+                </div> </br>
+            </div>
+        </section>
+		
+        <!-- Section avis avec carrousel -->
+        <section id="avis" class="section">
+            <h2>Ce qu'ils disent de moi</h2>
+            <div class="carousel">
+                <div class="carousel-inner" id="projectsContainer">
+ 
+                </div>
+                <button class="carousel-prev">&lt;</button> / 
+                <button class="carousel-next">&gt;</button>
+            </div>
+        </section>
+
+        <!-- Section Contact avec halo -->
+        <section id="contact" class="section">
+            <div class="glow-container">
+                <h2>Contact</h2>
+                <form action="https://formspree.io/f/xqazkrjp" method="post" id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+						<label for="name">Nom</label>						
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+						<label for="email">Email</label>						
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" cols="21" rows="10" required></textarea>
+						<label for="message">Message</label>
+                    </div>
+                    <button type="submit" value="Envoyer" aria-label="Envoyer">Envoyer</button>
+                </form>
+            </div>
+        </section>
+		
+		<!-- Modal des projets -->
+	<div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+		
+    </main>
+	<script src="projects-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

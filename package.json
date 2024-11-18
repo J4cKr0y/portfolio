@@ -1,0 +1,1 @@
+{"name":"portfolio","version":"1.0.0","description":"Jacky - D�veloppeur Full-stack : Node - Express / React","private":true,"scripts":{"test":"jest"},"devDependencies":{"@babel/preset-env":"^7.26.0","@testing-library/dom":"^10.4.0","@testing-library/jest-dom":"^6.6.3","jest":"^29.7.0","jest-environment-jsdom":"^29.7.0","text-encoding":"^0.7.0"}}
