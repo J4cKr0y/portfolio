@@ -94,9 +94,11 @@ main {
 	overflow-y: scroll; 
 }
 
-section{
-	scroll-snap-align: start;
-	height: 100vh;
+section {
+    scroll-snap-align: start;
+    min-height: 100vh; 
+    height: auto; 
+    overflow-y: auto; 
 }
 
 .tech-logos { 
@@ -215,7 +217,7 @@ section{
 
 .parallax-container {
     position: relative;
-    height: 100vh;
+    /*height: 100vh;*/
     overflow: hidden;
 }
 .parallax-svg {
@@ -497,16 +499,30 @@ p { font-size: 14px; }
 display: flex;
 gap: 0.5rem;
 }
-
+#about {
+    margin-top: 60vh;  
+}
 #about img{
-	padding-top: 10rem;
+	padding-top: 16rem;
     width: 50vw;
 }
-#about p{ font-weight: 700;}
+#about .content {
+    width: 90%; 
+    margin: 1rem auto; 
+    }
+#about p{ 
+    font-weight: 700;
+    line-height: 1.4; 
+    margin: 1rem 0; 
+}
 .glass-header { font-size: 90%;  } 
 .glass-header.minimized { font-size: 50%; }
 .theme-label i { font-size: 0.75rem; }
 .social-link { font-size: 1rem; }
 .form-group { margin-left: 16vw; }
-#message { width: 56vw; }
+#message { width: 50vw; }
+#labelMessage {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
 }

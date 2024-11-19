@@ -77,8 +77,6 @@ window.addEventListener('scroll', () => {
     isScrolling = setTimeout(() => {
         if (window.scrollY > 100) {
             header.classList.add('minimized');
-            hamburger.style.display = 'block';
-            mainNav.style.display = 'none';
             returnTop.classList.remove('hidden');
             techLogos.forEach(logo => {
                 logo.style.display = 'none';
@@ -92,6 +90,8 @@ window.addEventListener('scroll', () => {
             if (window.innerWidth <= 775) {
                 headerContent.style.gap = '1%';
                 headerContent.style.justifyContent = 'left';
+                hamburger.style.display = 'block';
+                mainNav.style.display = 'none';
             }
         } else {
             header.classList.remove('minimized');
