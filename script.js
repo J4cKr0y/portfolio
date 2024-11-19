@@ -43,14 +43,14 @@ function updateTitle() {
 }
 window.addEventListener('resize', updateTitle);
 window.addEventListener('load', updateTitle);  
- 
-
 
 const header = document.querySelector('.glass-header');
 const returnTop = document.querySelector('.return-top');
 const navLinks = document.querySelectorAll('.nav-link');
 const headerContent = document.querySelector('.header-content');
 const techLogos = document.querySelectorAll('.tech-logo');
+const hamburger = document.querySelector('.hamburger');
+const mainNav = document.querySelector('.main-nav');
 
 const observerOptions = {
     root: null,
@@ -77,6 +77,8 @@ window.addEventListener('scroll', () => {
     isScrolling = setTimeout(() => {
         if (window.scrollY > 100) {
             header.classList.add('minimized');
+            hamburger.style.display = 'block';
+            mainNav.style.display = 'none';
             returnTop.classList.remove('hidden');
             techLogos.forEach(logo => {
                 logo.style.display = 'none';
@@ -93,6 +95,8 @@ window.addEventListener('scroll', () => {
             }
         } else {
             header.classList.remove('minimized');
+            hamburger.style.display = 'none';
+            mainNav.style.display = 'flex';
             returnTop.classList.add('hidden');
             techLogos.forEach(logo => {
                 logo.style.display = '';
@@ -103,6 +107,11 @@ window.addEventListener('scroll', () => {
             headerContent.style.justifyContent = 'center';
         }
     }, 50);
+});
+
+document.querySelector('.hamburger').addEventListener('click', function() { 
+const nav = document.querySelector('.main-nav'); 
+nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
 });
 
 
@@ -156,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="project-details">
                     <h3>Citation de ${project.comment}</h3>
                     <p>${project.date}, <b>Projet :</b> ${project.title}</p>
-					<p><b>Compétences développées :</b> ${project.skills}</p>
+					<p><b>Compétences développées :</b></br> ${project.skills}</p>
                     <i>
                         <b>Difficulté :</b> ${project.difficulty}<br>
                         <b>Résolution :</b> ${project.solution}
