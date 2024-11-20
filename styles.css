@@ -8,7 +8,7 @@
     --accent-color: #1034A6; 
     --glow-color: #1034A6; 
     --color-link: #1034A6; 
-    --color-button-bg: #FFDF00; 
+    --color-button-bg: #ffc400; 
     --color-button-text: black;
     --color-header: #E2725B; 
 }
@@ -217,7 +217,6 @@ section {
 
 .parallax-container {
     position: relative;
-    /*height: 100vh;*/
     overflow: hidden;
 }
 .parallax-svg {
@@ -250,6 +249,9 @@ section {
 	margin-left: auto;
     margin-right: auto;
 }
+#about .content a{ color: var(--color-button-bg);}
+#about .content a:hover{ color: var(--color-header);}
+
 #contact button{
 	margin-bottom: 20vh;
 }
@@ -280,6 +282,11 @@ section {
     height: 100%;
     object-fit: cover;
 }
+figcaption {opacity:0;}
+figure:hover figcaption {
+transition:all 1s;
+  opacity:1;
+}
 .list .item {
     transition: 0.5s;
     filter: brightness(0.6);
@@ -288,6 +295,7 @@ section {
     filter: brightness(1);
     transform: translateZ(200px);
 }
+
 .list .item:hover + * {
     filter: brightness(0.9);
     transform: translateZ(150px) rotateY(40deg);
@@ -337,6 +345,18 @@ section {
 #modalContent p{
 	text-align: left;
 	margin-left: 25%;
+}
+#modalContent .tech-tag{
+	color: #a3b8ff;
+}
+#modalContent a{
+	color: var(--color-button-bg);
+}
+#modalContent a:hover{
+	color: #a3b8ff;
+}
+#modalContent a:visited{
+    color: #FFDF00;
 }
 .close {
     position: absolute;
@@ -433,6 +453,8 @@ section {
 .glass-header { font-size: 150%;  } 
 }
 @media (max-width: 887px) { 
+:root {--bg-img: url(img/fiber_blue-l_T.webp);}
+:root[data-theme="dark"] {--bg-img: url(img/fiber_blue_T.webp);}
 .glass-header { font-size: 120%;  }
 .glass-header.minimized { font-size: 70%; height: auto; padding: 1rem; }
 .header-content{ padding: 0; }
@@ -482,6 +504,7 @@ section {
         filter: brightness(0.8);
         transform: translateZ(70px) rotateX(20deg);
     }
+    .project-details {background: white;}
 }
 
 @media (max-width: 640px) { 

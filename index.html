@@ -79,7 +79,8 @@
                     <rect class="shape" x="60" y="40" width="20" height="20"/>
                     <polygon class="shape" points="40,60 60,80 20,80"/>
                 </svg>
-				<div class="portrait"><img src="img/Jacky.webp" alt="Auto-portrait de Jacky Royer"></div>
+				<div class="portrait"><img src="img/Jacky.webp" alt="Auto-portrait de Jacky Royer" 
+                    srcset="img/Jacky_T.webp 150w"></div>
                 <div class="content">
                     <h2>À propos</h2>
                 <p>Je suis passionné depuis mes premières lignes en Qbasic par la création sur ordinateur. :-)</br>
@@ -101,17 +102,17 @@
             <div class="list">
                 <div class="item">
                     <button class="image-button" aria-label="Ouvrir le projet Grimoire" onclick="openModal(6)">
-                        <img src="img/grimoire.webp" alt="Projet Grimoire" />
+                        <figure><img src="img/grimoire.webp" alt="Projet Grimoire" /><figcaption>Cliquez !</figcaption></figure>
                     </button>
                 </div> </br>
                 <div class="item">
                     <button class="image-button" aria-label="Ouvrir le projet Kasa" onclick="openModal(5)">
-                        <img src="img/kasa.webp" alt="Projet Kasa" />
+                        <figure><img src="img/kasa.webp" alt="Projet Kasa" /><figcaption>Cliquez !</figcaption></figure>
                     </button>
                 </div> </br>
                 <div class="item">
                     <button class="image-button" aria-label="Ouvrir le projet Pong" onclick="openModal(7)">
-                        <img src="img/pong.webp" alt="Projet Pong" />
+                        <figure><img src="img/pong.webp" alt="Projet Pong" /><figcaption>Cliquez !</figcaption></figure>
                     </button>
                 </div> </br>
             </div>
@@ -121,11 +122,10 @@
         <section id="avis" class="section">
             <h2>Ce qu'ils disent de moi</h2>
             <div class="carousel">
-                <div class="carousel-inner" id="projectsContainer">
- 
-                </div>
                 <button class="carousel-prev">&lt;</button> / 
                 <button class="carousel-next">&gt;</button>
+                <div class="carousel-inner" id="projectsContainer">
+                </div>
             </div>
         </section>
 
