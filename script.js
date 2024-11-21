@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="project-details">
                     <h3>Citation de ${project.comment}</h3>
                     <p>${project.date}, <b>Projet :</b> ${project.title}</p>
-					<p><b>Compétences développées :</b></br> ${project.skills}</p>
+					<p><b>Compétences développées :</b><br> ${project.skills}</p>
                     <i>
                         <b>Difficulté :</b> ${project.difficulty}<br>
                         <b>Résolution :</b> ${project.solution}
