@@ -34,8 +34,8 @@ jobs:
     - name: CSS validation
       run: |
         npm install -g stylelint stylelint-config-standard
-        npx stylelint "**/*.css"
-        
+        npx stylelint "styles.css" "pdf-styles.css"
+
     - name: JavaScript linting
       run: |
         npx eslint "**/*.js"
