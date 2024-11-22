@@ -35,9 +35,6 @@
         <i class="fas fa-moon"></i>
     </label>
 </div>
-
-
-
         <div class="header-content">
             <h1>Jacky</h1>
             <p class="title">Développeur Full-stack : Node - Express / React</p>
@@ -51,10 +48,10 @@
 			</div>         
             <div class="social-links">
                 <a href="https://github.com/J4cKr0y" class="social-link" aria-label="Lien Github" title="Lien Github">
-                    <i class="fab fa-github"></i>
+                    <i class="fab fa-github"><i class="visually-hidden">Lien Github</i></i>
                 </a>
                 <a href="https://www.linkedin.com/in/jacky-royer" class="social-link" aria-label="Lien linkedin" title="Lien linkedin">
-                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-linkedin"><i class="visually-hidden">Lien linkedin</i></i>
                 </a>
             </div>
             <nav class="main-nav" aria-label="Navigation principale">
@@ -68,6 +65,7 @@
 
         </div>
         <a href="#top" class="return-top hidden" aria-label="Retour en haut de la page" title="Retour en haut de la page">
+            <i class="visually-hidden">Retour en haut de la page</i>
             <i class="fas fa-arrow-up"></i>
         </a>
     </header>
@@ -79,8 +77,9 @@
                     <rect class="shape" x="60" y="40" width="20" height="20"/>
                     <polygon class="shape" points="40,60 60,80 20,80"/>
                 </svg>
-				<div class="portrait"><img src="img/Jacky.webp" alt="Auto-portrait de Jacky Royer" 
-                    srcset="img/Jacky_T.webp 150w"></div>
+				<div class="portrait">
+                    <img src="img/Jacky.webp" alt="Auto-portrait de Jacky Royer" srcset="img/Jacky_T.webp 150w, img/Jacky.webp 640w" sizes="(max-width: 640px) 150px, 15vw">
+                </div>
                 <div class="content">
                     <h2>À propos</h2>
                 <p>Je suis passionné depuis mes premières lignes en Qbasic par la création sur ordinateur. :-)<br>
@@ -95,30 +94,29 @@
                 </div>
             </div>
         </section>
-
-		
         <section id="projects" class="section">
             <h2>Mes projets</h2> <br>
             <div class="list">
                 <div class="item">
+                    <figure><figcaption>Cliquez !</figcaption></figure>
                     <button class="image-button" aria-label="Ouvrir le projet Grimoire" onclick="openModal(6)">
-                        <figure><img src="img/grimoire.webp" alt="Projet Grimoire" ><figcaption>Cliquez !</figcaption></figure>
+                        <img src="img/grimoire.webp" alt="Projet Grimoire" >
                     </button>
                 </div> <br>
                 <div class="item">
+                    <figure><figcaption>Cliquez !</figcaption></figure>
                     <button class="image-button" aria-label="Ouvrir le projet Kasa" onclick="openModal(5)">
-                        <figure><img src="img/kasa.webp" alt="Projet Kasa" ><figcaption>Cliquez !</figcaption></figure>
+                        <img src="img/kasa.webp" alt="Projet Kasa" >
                     </button>
                 </div> <br>
                 <div class="item">
+                    <figure><figcaption>Cliquez !</figcaption></figure>
                     <button class="image-button" aria-label="Ouvrir le projet Pong" onclick="openModal(7)">
-                        <figure><img src="img/pong.webp" alt="Projet Pong" ><figcaption>Cliquez !</figcaption></figure>
+                        <img src="img/pong.webp" alt="Projet Pong" >
                     </button>
                 </div> <br>
             </div>
         </section>
-		
-        <!-- Section avis avec carrousel -->
         <section id="avis" class="section">
             <h2>Ce qu'ils disent de moi</h2>
             <div class="carousel">
@@ -128,8 +126,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Section Contact avec halo -->
         <section id="contact" class="section">
             <div class="glow-container">
                 <h2>Contact</h2>
@@ -151,7 +147,6 @@
             </div>
         </section>
 		
-		<!-- Modal des projets -->
 	<div id="projectModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
