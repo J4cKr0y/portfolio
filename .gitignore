@@ -25,4 +25,4 @@ zGit.txt
 /_Doc
 /final
 /old
-.old
+*.old

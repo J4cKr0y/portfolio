@@ -2,7 +2,12 @@
   /* Thème clair */
   --bg-color: #e7f0ff;
   --text-color: #021b4e;
-  --accent-color: #0c2b8c; 
+  --bg-img: url(img/fiber_blue-l.webp);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+  --glow-color: #1034A6; 
+  --accent-color: #4285F4; 
   --color-link: #0c2b8c; 
   --color-link-visited: #7030A0; 
   --color-button-bg: #ffc400; 
@@ -13,12 +18,17 @@
 :root[data-theme="dark"] {
   --bg-color: #0a0f26;
   --text-color: #ffffff; 
-  --accent-color: #4285F4; 
+  --bg-img: url(img/fiber_blue.webp);
+  --glass-bg: rgba(0, 0, 0, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.3); 
+  --glow-color: #1034A6; 
+  --accent-color: #0c2b8c; 
   --color-link: #5b9bff; 
   --color-link-visited: #cf9fff; 
   --color-button-bg: #FFDF00; 
   --color-button-text: #000000; 
-  --color-header: #FF7043; 
+  --color-header: #FF7043;  
 }
 
 
@@ -428,7 +438,7 @@ transition:all 1s;
 }
 
 .project-card img{
-    width: 75%;
+    width: 50%;
 }
 
 .project-details {
