@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     let savedTheme = localStorage.getItem('theme');
+
     if (!savedTheme) {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             savedTheme = 'dark';
@@ -9,14 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
             savedTheme = 'light';
         }
     }
+
     document.documentElement.dataset.theme = savedTheme;
     themeToggle.checked = savedTheme === 'dark';
+
     themeToggle.addEventListener('change', () => {
         const newTheme = themeToggle.checked ? 'dark' : 'light';
         document.documentElement.dataset.theme = newTheme;
         localStorage.setItem('theme', newTheme);
     });
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersHighContrast = window.matchMedia('(prefers-contrast: more)').matches;
+
+    if (prefersHighContrast) {
+        document.documentElement.classList.add('high-contrast');
+    }
+    if (prefersReducedMotion) {
+        document.documentElement.classList.add('reduced-motion');
+    }
 });
+
 
 document.addEventListener('DOMContentLoaded', () => { 
 const logos = document.querySelectorAll('.tech-logo'); 
