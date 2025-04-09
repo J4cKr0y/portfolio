@@ -55,7 +55,7 @@ a, button, .tech-stack span{
     cursor: pointer;
     text-align: center;
     text-decoration: none solid;
-    color: var(--color-link);
+    color: var(--color-button-text);
     white-space: nowrap;
     vertical-align: middle;
 }
@@ -271,8 +271,10 @@ section {
 	margin-left: auto;
     margin-right: auto;
 }
-#about .content a{ color: var(--color-button-bg);}
-#about .content a:hover{ color: var(--color-header);}
+
+#about .content a{ color: var(--color-header);}
+#about .content a:hover{ color: var(--color-button-bg);}
+#about .content a:visited{ color: var(--color-link-visited);}
 
 #contact button{
 	margin-bottom: 20vh;
@@ -422,6 +424,10 @@ transition:all 1s;
     position: relative;
     width: 100%;
     overflow: hidden;
+}
+.carousel-prev, .carousel-next {
+    color: var(--color-button-text);
+    font-size: large;
 }
 
 .carousel-inner {
